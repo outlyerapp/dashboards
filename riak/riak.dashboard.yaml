@@ -1,0 +1,186 @@
+title: Production Riak
+period: 86400
+positions:
+  - title: get time 100th percentile
+    type: detailed-chart
+    color: green
+    row: 1
+    col: 1
+    size_x: 2
+    size_y: 2
+    series:
+      - metric: riak.node_get_fsm_time_100
+        scope:
+          tag: riak
+  - title: put time 100th percentile
+    type: detailed-chart
+    color: purple
+    row: 1
+    col: 3
+    size_x: 2
+    size_y: 2
+    series:
+      - metric: riak.node_put_fsm_time_100
+        scope:
+          tag: riak
+  - title: cluster max load
+    type: number
+    color: navy
+    row: 1
+    col: 5
+    size_x: 1
+    size_y: 1
+    filter: max
+    symbol: ambulance
+    series:
+      - metric: load.load.shortterm
+        scope:
+          tag: riak
+  - title: server status
+    data_type: boolean
+    type: status
+    color: teal
+    row: 1
+    col: 6
+    size_x: 1
+    size_y: 1
+    series:
+      - metric: 'source:status'
+        scope:
+          tag: riak
+  - title: cluster max memory used
+    type: number
+    color: blue
+    row: 2
+    col: 5
+    size_x: 1
+    size_y: 1
+    filter: max
+    symbol: lightbulb-o
+    series:
+      - metric: memory.memory-used
+        scope:
+          tag: riak
+  - title: cluster max cpu used
+    type: number
+    color: aqua
+    row: 2
+    col: 6
+    size_x: 1
+    size_y: 1
+    filter: max
+    symbol: tachometer
+    series:
+      - metric: base.cpu
+        scope:
+          tag: riak
+  - title: get time 99th percentile
+    type: detailed-chart
+    color: green
+    row: 3
+    col: 1
+    size_x: 2
+    size_y: 2
+    symbol: bar-chart-o
+    series:
+      - metric: riak.node_get_fsm_time_99
+        scope:
+          tag: riak
+  - title: put time 99th percentile
+    type: detailed-chart
+    color: purple
+    row: 3
+    col: 3
+    size_x: 2
+    size_y: 2
+    symbol: bar-chart-o
+    series:
+      - metric: riak.node_put_fsm_time_99
+        scope:
+          tag: riak
+  - title: get time mean
+    type: number
+    color: green
+    row: 3
+    col: 5
+    size_x: 1
+    size_y: 1
+    filter: max
+    symbol: arrow-circle-up
+    series:
+      - metric: riak.node_get_fsm_time_mean
+        scope:
+          tag: riak
+  - title: put time mean
+    type: number
+    color: purple
+    row: 3
+    col: 6
+    size_x: 1
+    size_y: 1
+    symbol: arrow-circle-down
+    filter: max
+    series:
+      - metric: riak.node_put_fsm_time_mean
+        scope:
+          tag: riak
+  - title: get time median
+    type: number
+    color: green
+    row: 4
+    col: 5
+    size_x: 1
+    size_y: 1
+    symbol: arrow-circle-up
+    filter: max
+    series:
+      - metric: riak.node_get_fsm_time_median
+        scope:
+          tag: riak
+  - title: put time median
+    type: number
+    color: purple
+    row: 4
+    col: 6
+    size_x: 1
+    size_y: 1
+    symbol: arrow-circle-down
+    filter: max
+    series:
+      - metric: riak.node_put_fsm_time_median
+        scope:
+          tag: riak
+  - title: get time 95th percentile
+    type: detailed-chart
+    color: green
+    row: 5
+    col: 1
+    size_x: 2
+    size_y: 1
+    symbol: bar-chart-o
+    series:
+      - metric: riak.node_get_fsm_time_95
+        scope:
+          tag: riak
+  - title: put time 95th percentile
+    type: detailed-chart
+    color: purple
+    row: 5
+    col: 3
+    size_x: 2
+    size_y: 1
+    symbol: bar-chart-o
+    series:
+      - metric: riak.node_put_fsm_time_95
+        scope:
+          tag: riak
+  - type: detailed-chart
+    color: red
+    row: 5
+    col: 5
+    size_x: 2
+    size_y: 1
+    series:
+      - metric: base.load_1_min
+        scope:
+          tag: riak
