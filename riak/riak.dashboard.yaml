@@ -1,4 +1,4 @@
-title: Production Riak
+title: Riak
 period: 86400
 positions:
   - title: get time 100th percentile

@@ -1,0 +1,196 @@
+title: MongoDB
+period: 86400
+positions:
+  - type: detailed-chart
+    color: blue
+    row: 1
+    col: 1
+    size_x: 6
+    size_y: 2
+    series:
+      - metric: mongodb.locked
+        scope:
+          tag: mongo
+  - type: number
+    color: aqua
+    row: 3
+    col: 1
+    size_x: 1
+    size_y: 1
+    symbol: random
+    series:
+      - metric: mongodb.connections
+        scope:
+          tag: mongo
+  - type: number
+    color: yellow
+    row: 3
+    col: 2
+    size_x: 1
+    size_y: 1
+    symbol: question
+    series:
+      - metric: mongodb.query
+        scope:
+          tag: mongo
+  - type: number
+    color: yellow
+    row: 3
+    col: 3
+    size_x: 1
+    size_y: 1
+    symbol: gavel
+    series:
+      - metric: mongodb.command
+        scope:
+          tag: mongo
+  - type: number
+    color: yellow
+    row: 3
+    col: 4
+    size_x: 1
+    size_y: 1
+    symbol: exchange
+    series:
+      - metric: mongodb.getmore
+        scope:
+          tag: mongo
+  - type: number
+    color: yellow
+    row: 3
+    col: 5
+    size_x: 1
+    size_y: 1
+    symbol: spinner
+    series:
+      - metric: mongodb.update
+        scope:
+          tag: mongo
+  - type: number
+    color: yellow
+    row: 3
+    col: 6
+    size_x: 1
+    size_y: 1
+    symbol: plus
+    series:
+      - metric: mongodb.insert
+        scope:
+          tag: mongo
+  - type: number
+    color: green
+    row: 4
+    col: 1
+    size_x: 1
+    size_y: 1
+    symbol: angle-double-right
+    series:
+      - metric: mongodb.araw
+        scope:
+          tag: mongo
+  - type: number
+    color: green
+    row: 4
+    col: 2
+    size_x: 1
+    size_y: 1
+    symbol: angle-double-left
+    series:
+      - metric: mongodb.qrqw
+        scope:
+          tag: mongo
+  - type: number
+    color: blue
+    row: 4
+    col: 3
+    size_x: 1
+    size_y: 1
+    symbol: arrow-circle-o-down
+    series:
+      - metric: mongodb.net_in
+        scope:
+          tag: mongo
+  - type: number
+    color: blue
+    row: 4
+    col: 4
+    size_x: 1
+    size_y: 1
+    symbol: arrow-circle-o-up
+    series:
+      - metric: mongodb.net_out
+        scope:
+          tag: mongo
+  - type: number
+    color: purple
+    row: 4
+    col: 5
+    size_x: 1
+    size_y: 1
+    symbol: archive
+    series:
+      - metric: mongodb.res
+        scope:
+          tag: mongo
+  - type: number
+    color: purple
+    row: 4
+    col: 6
+    size_x: 1
+    size_y: 1
+    symbol: bolt
+    series:
+      - metric: mongodb.vsize
+        scope:
+          tag: mongo
+  - type: detailed-chart
+    color: blue
+    row: 5
+    col: 1
+    size_x: 2
+    size_y: 1
+    series:
+      - metric: base.load_1_min
+        scope:
+          tag: mongo
+  - type: detailed-chart
+    color: navy
+    row: 5
+    col: 3
+    size_x: 3
+    size_y: 1
+    series:
+      - metric: base.cpu
+        scope:
+          tag: mongo
+  - type: number
+    color: purple
+    row: 5
+    col: 6
+    size_x: 1
+    size_y: 1
+    symbol: lightbulb-o
+    series:
+      - metric: base.memory
+        scope:
+          tag: mongo
+  - type: detailed-chart
+    color: blue
+    row: 6
+    col: 1
+    size_x: 3
+    size_y: 1
+    series:
+      - metric: base.net_download
+        scope:
+          tag: mongo
+  - type: detailed-chart
+    color: green
+    row: 6
+    col: 4
+    size_x: 3
+    size_y: 1
+    series:
+      - metric: base.net_upload
+        scope:
+          tag: mongo
