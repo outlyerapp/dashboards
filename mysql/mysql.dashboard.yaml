@@ -1,0 +1,500 @@
+title: MySQL
+period: 604800
+positions:
+  - title: Agent Status
+    data_type: boolean
+    type: status
+    color: red
+    row: 1
+    col: 1
+    size_x: 1
+    size_y: 1
+    series:
+      - metric: 'source:status'
+        scope:
+          tag: mysql
+  - title: CPU
+    data_type: number
+    type: detailed-chart
+    color: navy
+    row: 1
+    col: 2
+    size_x: 2
+    size_y: 2
+    series:
+      - metric: base.cpu
+        scope:
+          tag: mysql
+  - title: IOwait
+    data_type: number
+    type: detailed-chart
+    color: navy
+    row: 1
+    col: 4
+    size_x: 2
+    size_y: 2
+    series:
+      - metric: base.cpu.iowait
+        scope:
+          tag: mysql
+  - title: Mem Total
+    data_type: number
+    type: detailed-chart
+    color: navy
+    row: 1
+    col: 6
+    size_x: 2
+    size_y: 1
+    series:
+      - metric: base.vmem.total
+        scope:
+          tag: mysql
+  - title: '%Used /Data'
+    data_type: number
+    type: detailed-chart
+    color: navy
+    row: 1
+    col: 8
+    size_x: 2
+    size_y: 2
+    series:
+      - metric: base.disk./data.percent_used
+        scope:
+          tag: mysql
+  - title: Host Status
+    data_type: nagios
+    type: status
+    color: lime
+    row: 2
+    col: 1
+    size_x: 1
+    size_y: 1
+    series:
+      - metric: base.status
+        scope:
+          tag: mysql
+  - title: Mem Available
+    data_type: number
+    type: detailed-chart
+    color: navy
+    row: 2
+    col: 6
+    size_x: 2
+    size_y: 1
+    series:
+      - metric: base.vmem.available
+        scope:
+          tag: mysql
+  - title: MySQL Stats Available
+    data_type: nagios
+    type: status
+    color: red
+    row: 3
+    col: 1
+    size_x: 1
+    size_y: 1
+    series:
+      - metric: mysql_advanced.status
+        scope:
+          tag: mysql
+  - title: Slow Queries / s
+    data_type: number
+    type: detailed-chart
+    color: maroon
+    row: 3
+    col: 2
+    size_x: 2
+    size_y: 2
+    series:
+      - metric: mysql_advanced.slow_queries_per_sec
+        scope:
+          tag: mysql
+  - title: Deadlocks / s
+    data_type: number
+    type: detailed-chart
+    color: maroon
+    row: 3
+    col: 4
+    size_x: 2
+    size_y: 2
+    series:
+      - metric: mysql_advanced.innodb_deadlocks_per_sec
+        scope:
+          tag: mysql
+  - title: Transactions / s
+    data_type: number
+    type: detailed-chart
+    color: maroon
+    row: 3
+    col: 6
+    size_x: 2
+    size_y: 2
+    series:
+      - metric: mysql_advanced.questions_per_sec
+        scope:
+          tag: mysql
+  - title: Connections / s
+    data_type: number
+    type: detailed-chart
+    color: maroon
+    row: 3
+    col: 8
+    size_x: 1
+    size_y: 2
+    series:
+      - metric: mysql_advanced.connections_per_sec
+        scope:
+          tag: mysql
+  - title: Max Conn Errors / s
+    data_type: number
+    type: detailed-chart
+    color: maroon
+    row: 3
+    col: 9
+    size_x: 1
+    size_y: 2
+    series:
+      - metric: mysql_advanced.connection_errors_max_connections_per_sec
+        scope:
+          tag: mysql
+  - title: Replication Status
+    data_type: nagios
+    type: status
+    color: maroon
+    row: 4
+    col: 1
+    size_x: 1
+    size_y: 1
+    series:
+      - metric: mysql_replication.status
+        scope:
+          tag:
+            - mysql
+  - title: Threads Running
+    data_type: number
+    type: detailed-chart
+    color: olive
+    row: 5
+    col: 1
+    size_x: 1
+    size_y: 2
+    series:
+      - metric: mysql_advanced.threads_running
+        scope:
+          tag:
+            - mysql
+  - title: Replication Lag
+    data_type: number
+    type: detailed-chart
+    color: olive
+    row: 5
+    col: 2
+    size_x: 2
+    size_y: 2
+    series:
+      - metric: mysql_replication.repl_lag
+        scope:
+          tag: mysql
+  - title: Repl Lag 15m Avg
+    data_type: number
+    type: detailed-chart
+    color: olive
+    row: 5
+    col: 4
+    size_x: 2
+    size_y: 2
+    series:
+      - metric: mysql_replication.repl_lag_15m_avg
+        scope:
+          tag: mysql
+  - title: Temp Tables / s
+    data_type: number
+    type: detailed-chart
+    color: olive
+    row: 5
+    col: 6
+    size_x: 2
+    size_y: 2
+    series:
+      - metric: mysql_advanced.created_tmp_tables_per_sec
+        scope:
+          tag:
+            - mysql
+
+  - title: Temp Disk Tables / s
+    data_type: number
+    type: detailed-chart
+    color: olive
+    row: 5
+    col: 8
+    size_x: 1
+    size_y: 2
+    series:
+      - metric: mysql_advanced.created_tmp_disk_tables_per_sec
+        scope:
+          tag: mysql
+  - title: Temp Files / s
+    data_type: number
+    type: detailed-chart
+    color: olive
+    row: 5
+    col: 9
+    size_x: 1
+    size_y: 2
+    series:
+      - metric: mysql_advanced.created_tmp_files_per_sec
+        scope:
+          tag: mysql
+  - title: Net Up
+    data_type: number
+    type: detailed-chart
+    color: navy
+    row: 7
+    col: 1
+    size_x: 1
+    size_y: 1
+    series:
+      - metric: base.net_upload
+        scope:
+          tag: mysql
+  - title: Data Buffer Pool Pages
+    data_type: number
+    type: detailed-chart
+    color: purple
+    row: 7
+    col: 2
+    size_x: 1
+    size_y: 1
+    series:
+      - metric: mysql_advanced.innodb_buffer_pool_pages_data
+        scope:
+          tag: mysql
+  - title: Row Lock Waits / s
+    data_type: number
+    type: detailed-chart
+    color: aqua
+    row: 7
+    col: 3
+    size_x: 1
+    size_y: 1
+    series:
+      - metric: mysql_advanced.innodb_row_lock_waits_per_sec
+        scope:
+          tag: mysql
+  - title: InnoDB Memory Usage
+    data_type: number
+    type: detailed-chart
+    color: navy
+    row: 7
+    col: 4
+    size_x: 1
+    size_y: 1
+    series:
+      - metric: mysql_advanced.innodb_mem_total
+        scope:
+          tag: mysql
+  - title: Open Tables
+    data_type: number
+    type: detailed-chart
+    color: navy
+    row: 7
+    col: 5
+    size_x: 1
+    size_y: 1
+    series:
+      - metric: mysql_advanced.open_tables
+        scope:
+          tag: mysql
+  - title: Mutex Spin Waits / s
+    data_type: number
+    type: detailed-chart
+    color: purple
+    row: 7
+    col: 6
+    size_x: 2
+    size_y: 1
+    series:
+      - metric: mysql_advanced.innodb_mutex_spin_waits_per_sec
+        scope:
+          tag: mysql
+  - title: Mutex Spin Rounds / s
+    data_type: number
+    type: detailed-chart
+    color: purple
+    row: 7
+    col: 8
+    size_x: 2
+    size_y: 1
+    series:
+      - metric: mysql_advanced.innodb_mutex_spin_rounds_per_sec
+        scope:
+          tag: mysql
+  - title: Net Down
+    data_type: number
+    type: detailed-chart
+    color: navy
+    row: 8
+    col: 1
+    size_x: 1
+    size_y: 1
+    series:
+      - metric: base.net_download
+        scope:
+          tag: mysql
+  - title: Dirty Buffer Pool Pages
+    data_type: number
+    type: detailed-chart
+    color: purple
+    row: 8
+    col: 2
+    size_x: 1
+    size_y: 1
+    series:
+      - metric: mysql_advanced.innodb_buffer_pool_pages_dirty
+        scope:
+          tag: mysql
+  - title: Avg Row Lock Time
+    data_type: number
+    type: detailed-chart
+    color: aqua
+    row: 8
+    col: 3
+    size_x: 1
+    size_y: 1
+    series:
+      - metric: mysql_advanced.innodb_row_lock_time_avg
+        scope:
+          tag: mysql
+  - title: InnoDB Dict Mem Usage
+    data_type: number
+    type: detailed-chart
+    color: navy
+    row: 8
+    col: 4
+    size_x: 1
+    size_y: 1
+    series:
+      - metric: mysql_advanced.innodb_mem_dictionary
+        scope:
+          tag: mysql
+  - title: Open Files
+    data_type: number
+    type: detailed-chart
+    color: navy
+    row: 8
+    col: 5
+    size_x: 1
+    size_y: 1
+    series:
+      - metric: mysql_advanced.innodb_num_open_files
+        scope:
+          tag: mysql
+  - title: S-Lock Spin Waits / s
+    data_type: number
+    type: detailed-chart
+    color: purple
+    row: 8
+    col: 6
+    size_x: 2
+    size_y: 1
+    series:
+      - metric: mysql_advanced.innodb_s_lock_spin_waits_per_sec
+        scope:
+          tag: mysql
+  - title: S-Lock Spin Rounds / s
+    data_type: number
+    type: detailed-chart
+    color: purple
+    row: 8
+    col: 8
+    size_x: 2
+    size_y: 1
+    series:
+      - metric: mysql_advanced.innodb_s_lock_spin_rounds_per_sec
+        scope:
+          tag: mysql
+  - title: Page Size
+    data_type: number
+    type: number
+    color: navy
+    row: 9
+    col: 1
+    size_x: 1
+    size_y: 1
+    filter: max
+    series:
+      - metric: mysql_advanced.innodb_page_size
+        scope:
+          tag: mysql
+  - title: Full Table Scans
+    data_type: number
+    type: detailed-chart
+    color: purple
+    row: 9
+    col: 2
+    size_x: 1
+    size_y: 1
+    series:
+      - metric: mysql_advanced.select_scan_per_sec
+        scope:
+          tag: mysql
+  - title: Max Row Lock Time
+    data_type: number
+    type: detailed-chart
+    color: aqua
+    row: 9
+    col: 3
+    size_x: 1
+    size_y: 1
+    series:
+      - metric: mysql_advanced.innodb_row_lock_time_max
+        scope:
+          tag: mysql
+  - title: InnoDB Adapt Hash Mem Usage
+    data_type: number
+    type: detailed-chart
+    color: navy
+    row: 9
+    col: 4
+    size_x: 1
+    size_y: 1
+    series:
+      - metric: mysql_advanced.innodb_mem_adaptive_hash
+        scope:
+          tag: mysql
+  - title: Query Cache Mem Free
+    data_type: number
+    type: detailed-chart
+    color: navy
+    row: 9
+    col: 5
+    size_x: 1
+    size_y: 1
+    series:
+      - metric: mysql_advanced.qcache_free_memory
+        scope:
+          tag: mysql
+  - title: X-Lock Spin Waits / s
+    data_type: number
+    type: detailed-chart
+    color: purple
+    row: 9
+    col: 6
+    size_x: 2
+    size_y: 1
+    series:
+      - metric: mysql_advanced.innodb_x_lock_spin_waits_per_sec
+        scope:
+          tag: mysql
+  - title: X-Lock Spin Rounds / s
+    data_type: number
+    type: detailed-chart
+    color: purple
+    row: 9
+    col: 8
+    size_x: 2
+    size_y: 1
+    series:
+      - metric: mysql_advanced.innodb_x_lock_spin_rounds_per_sec
+        scope:
+          tag: mysql
