@@ -1,0 +1,147 @@
+title: RabbitMQ
+period: 86400
+positions:
+  - title: messages
+    type: number
+    color: green
+    row: 1
+    col: 1
+    size_x: 1
+    size_y: 1
+    series:
+      - metric: rabbitmq.total_messages
+        scope:
+          tag: rabbit
+  - title: connections
+    type: number
+    color: blue
+    row: 1
+    col: 2
+    size_x: 1
+    size_y: 1
+    series:
+      - metric: rabbitmq.total_connections
+        scope:
+          tag: rabbit
+  - title: channels
+    type: number
+    color: olive
+    row: 1
+    col: 3
+    size_x: 1
+    size_y: 1
+    series:
+      - metric: rabbitmq.total_channels
+        scope:
+          tag: rabbit
+  - title: exchanges
+    type: number
+    color: purple
+    row: 1
+    col: 4
+    size_x: 1
+    size_y: 1
+    series:
+      - metric: rabbitmq.total_exhanges
+        scope:
+          tag: rabbit
+  - title: queues
+    type: number
+    color: orange
+    row: 1
+    col: 5
+    size_x: 1
+    size_y: 1
+    symbol: anchor
+    series:
+      - metric: rabbitmq.total_queues
+        scope:
+          tag: rabbit
+  - title: consumers
+    type: number
+    color: navy
+    row: 1
+    col: 6
+    size_x: 1
+    size_y: 1
+    series:
+      - metric: rabbitmq.total_consumers
+        scope:
+          tag: rabbit
+  - title: total messages
+    type: detailed-chart
+    color: orange
+    row: 2
+    col: 1
+    size_x: 5
+    size_y: 2
+    series:
+      - metric: rabbitmq.total_messages
+        scope:
+          tag: rabbit
+  - title: total rate
+    type: number
+    color: orange
+    row: 2
+    col: 6
+    size_x: 1
+    size_y: 2
+    series:
+      - metric: rabbitmq.total_messages_rate
+        scope:
+          tag: rabbit
+  - title: total messages ready
+    type: detailed-chart
+    color: orange
+    row: 4
+    col: 1
+    size_x: 5
+    size_y: 1
+    series:
+      - metric: rabbitmq.total_messages_ready
+        scope:
+          tag: rabbit
+  - title: ready rate
+    type: number
+    color: orange
+    row: 4
+    col: 6
+    size_x: 1
+    size_y: 1
+    series:
+      - metric: rabbitmq.total_messages_ready_rate
+        scope:
+          tag: rabbit
+  - title: metrics per second
+    type: detailed-chart
+    color: red
+    row: 5
+    col: 1
+    size_x: 6
+    size_y: 1
+    series:
+      - metric: metrics.metrics_in_rate
+        scope:
+          tag: rabbit
+  - title: total messages unack
+    type: detailed-chart
+    color: green
+    row: 6
+    col: 1
+    size_x: 5
+    size_y: 1
+    series:
+      - metric: rabbitmq.total_messages_unack
+        scope:
+          tag: rabbit
+  - title: unack rate
+    type: number
+    color: green
+    row: 6
+    col: 6
+    size_x: 1
+    size_y: 1
+    series:
+      - metric: rabbitmq.total_messages_unack_rate
+        scope:
+          tag: rabbit
