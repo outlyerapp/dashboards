@@ -1,0 +1,146 @@
+title: Prod Nginx
+period: 86400
+positions:
+  - title: 5xx responses
+    data_type: number
+    type: detailed-chart
+    color: red
+    row: 1
+    col: 1
+    size_x: 4
+    size_y: 1
+    series:
+      - metric: nginx-logs.5xx
+        scope:
+          tag: nginx
+  - title: 5xx codes / 30 secs
+    data_type: number
+    type: number
+    color: red
+    row: 1
+    col: 5
+    size_x: 2
+    size_y: 1
+    filter: max
+    symbol: exclamation-circle
+    series:
+      - metric: nginx-logs.5xx
+        scope:
+          tag: nginx
+  - title: 4xx responses
+    data_type: number
+    type: detailed-chart
+    color: red
+    row: 2
+    col: 1
+    size_x: 4
+    size_y: 1
+    series:
+      - metric: nginx-logs.4xx
+        scope:
+          tag: nginx
+  - title: 4xx codes / 30secs
+    data_type: number
+    type: number
+    color: red
+    row: 2
+    col: 5
+    size_x: 2
+    size_y: 1
+    filter: max
+    symbol: exclamation
+    series:
+      - metric: nginx-logs.4xx
+        scope:
+          tag: nginx
+  - title: unhappiest requests
+    data_type: number
+    type: detailed-chart
+    color: red
+    row: 3
+    col: 1
+    size_x: 4
+    size_y: 1
+    series:
+      - metric: nginx-logs.max_time
+        scope:
+          tag: nginx
+  - title: unhappiest request
+    data_type: number
+    type: number
+    color: red
+    row: 3
+    col: 5
+    size_x: 2
+    size_y: 1
+    symbol: frown-o
+    filter: max
+    series:
+      - metric: nginx-logs.max_time
+        scope:
+          tag: nginx
+  - title: happiest requests
+    data_type: number
+    type: detailed-chart
+    color: green
+    row: 4
+    col: 1
+    size_x: 4
+    size_y: 1
+    series:
+      - metric: nginx-logs.min_time
+        scope:
+          tag: nginx
+  - title: happiest request
+    data_type: number
+    type: number
+    color: green
+    row: 4
+    col: 5
+    size_x: 2
+    size_y: 1
+    filter: min
+    symbol: smile-o
+    series:
+      - metric: nginx-logs.min_time
+        scope:
+          tag: nginx
+  - title: 2xx responses
+    data_type: number
+    type: detailed-chart
+    color: green
+    row: 5
+    col: 1
+    size_x: 4
+    size_y: 1
+    series:
+      - metric: nginx-logs.2xx
+        scope:
+          tag: nginx
+  - title: usual request
+    data_type: number
+    type: number
+    color: green
+    row: 5
+    col: 5
+    size_x: 2
+    size_y: 1
+    filter: avg
+    symbol: meh-o
+    series:
+      - metric: nginx-logs.avg_time
+        scope:
+          tag: nginx
+  - title: 3xx responses
+    data_type: number
+    type: detailed-chart
+    color: green
+    row: 6
+    col: 1
+    size_x: 4
+    size_y: 1
+    series:
+      - metric: nginx-logs.3xx
+        scope:
+          tag: nginx
+
