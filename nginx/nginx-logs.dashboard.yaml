@@ -1,7 +1,7 @@
 title: Prod Nginx
 period: 86400
 positions:
-  - title: 5xx responses
+  - title: we did something wrong
     data_type: number
     type: detailed-chart
     color: red
@@ -20,14 +20,14 @@ positions:
     row: 1
     col: 5
     size_x: 2
-    size_y: 1
+    size_y: 2
     filter: max
     symbol: exclamation-circle
     series:
       - metric: nginx-logs.5xx
         scope:
           tag: nginx
-  - title: 4xx responses
+  - title: they did something wrong
     data_type: number
     type: detailed-chart
     color: red
@@ -35,20 +35,6 @@ positions:
     col: 1
     size_x: 4
     size_y: 1
-    series:
-      - metric: nginx-logs.4xx
-        scope:
-          tag: nginx
-  - title: 4xx codes / 30secs
-    data_type: number
-    type: number
-    color: red
-    row: 2
-    col: 5
-    size_x: 2
-    size_y: 1
-    filter: max
-    symbol: exclamation
     series:
       - metric: nginx-logs.4xx
         scope:
@@ -65,7 +51,7 @@ positions:
       - metric: nginx-logs.max_time
         scope:
           tag: nginx
-  - title: unhappiest request
+  - title: 4xx codes / 30secs
     data_type: number
     type: number
     color: red
@@ -73,10 +59,10 @@ positions:
     col: 5
     size_x: 2
     size_y: 1
-    symbol: frown-o
     filter: max
+    symbol: exclamation
     series:
-      - metric: nginx-logs.max_time
+      - metric: nginx-logs.4xx
         scope:
           tag: nginx
   - title: happiest requests
@@ -91,21 +77,21 @@ positions:
       - metric: nginx-logs.min_time
         scope:
           tag: nginx
-  - title: happiest request
+  - title: unhappiest request
     data_type: number
     type: number
-    color: green
+    color: red
     row: 4
     col: 5
     size_x: 2
     size_y: 1
-    filter: min
-    symbol: smile-o
+    symbol: frown-o
+    filter: max
     series:
-      - metric: nginx-logs.min_time
+      - metric: nginx-logs.max_time
         scope:
           tag: nginx
-  - title: 2xx responses
+  - title: good requests
     data_type: number
     type: detailed-chart
     color: green
@@ -117,7 +103,7 @@ positions:
       - metric: nginx-logs.2xx
         scope:
           tag: nginx
-  - title: usual request
+  - title: happiest request
     data_type: number
     type: number
     color: green
@@ -125,13 +111,13 @@ positions:
     col: 5
     size_x: 2
     size_y: 1
-    filter: avg
-    symbol: meh-o
+    filter: min
+    symbol: smile-o
     series:
-      - metric: nginx-logs.avg_time
+      - metric: nginx-logs.min_time
         scope:
           tag: nginx
-  - title: 3xx responses
+  - title: redirections
     data_type: number
     type: detailed-chart
     color: green
@@ -143,4 +129,17 @@ positions:
       - metric: nginx-logs.3xx
         scope:
           tag: nginx
-
+  - title: usual request
+    data_type: number
+    type: number
+    color: green
+    row: 6
+    col: 5
+    size_x: 2
+    size_y: 1
+    filter: avg
+    symbol: meh-o
+    series:
+      - metric: nginx-logs.avg_time
+        scope:
+          tag: nginx
