@@ -1,0 +1,273 @@
+title: MSSQL
+period: 3600
+positions:
+  - title: user connections
+    data_type: number
+    type: number
+    color: green
+    row: 1
+    col: 1
+    size_x: 1
+    size_y: 1
+    filter: max
+    series:
+      - metric: mssql.general_statistics_user_connections
+        scope:
+          tag: mssql
+  - title: freespace page scans
+    data_type: number
+    type: number
+    color: green
+    row: 1
+    col: 2
+    size_x: 1
+    size_y: 1
+    filter: max
+    series:
+      - metric: mssql.access_methods_freespace_scans_sec
+        scope:
+          tag: mssql
+  - title: full scans /sec
+    data_type: number
+    type: number
+    color: green
+    row: 1
+    col: 3
+    size_x: 1
+    size_y: 1
+    filter: max
+    series:
+      - metric: mssql.access_methods_full_scans_sec
+        scope:
+          tag: mssql
+  - title: buffer cache hit ratio
+    data_type: number
+    type: number
+    color: orange
+    row: 1
+    col: 4
+    size_x: 1
+    size_y: 1
+    filter: max
+    series:
+      - metric: mssql.buffer_manager_buffer_cache_hit_ratio
+        scope:
+          tag: mssql
+  - title: page life expectency
+    data_type: number
+    type: number
+    color: orange
+    row: 1
+    col: 5
+    size_x: 1
+    size_y: 1
+    filter: max
+    series:
+      - metric: mssql.buffer_manager_page_life_expectancy
+        scope:
+          tag: mssql
+  - title: deadlocks /sec
+    data_type: number
+    type: number
+    color: red
+    row: 1
+    col: 6
+    size_x: 1
+    size_y: 1
+    filter: max
+    series:
+      - metric: mssql.locks_total_number_of_deadlocks_sec
+        scope:
+          tag: mssql
+  - title: batch requests /sec
+    data_type: number
+    type: number
+    color: purple
+    row: 2
+    col: 1
+    size_x: 1
+    size_y: 1
+    filter: max
+    series:
+      - metric: mssql.sql_statistics_batch_requests_sec
+        scope:
+          tag: mssql
+  - title: compilations /sec
+    data_type: number
+    type: number
+    color: purple
+    row: 2
+    col: 2
+    size_x: 1
+    size_y: 1
+    filter: max
+    series:
+      - metric: mssql.sql_statistics_sql_compilations_sec
+        scope:
+          tag: mssql
+  - title: recomplications /sec
+    data_type: number
+    type: number
+    color: purple
+    row: 2
+    col: 3
+    size_x: 1
+    size_y: 1
+    filter: max
+    series:
+      - metric: mssql.sql_statistics_sql_re_compilations_sec
+        scope:
+          tag: mssql
+  - title: memory available (bytes)
+    data_type: number
+    type: number
+    color: blue
+    row: 2
+    col: 4
+    size_x: 1
+    size_y: 1
+    filter: max
+    series:
+      - metric: windows.memory_available_mbytes
+        scope:
+          tag: mssql
+  - title: server memory (kb)
+    data_type: number
+    type: number
+    color: blue
+    row: 2
+    col: 5
+    size_x: 1
+    size_y: 1
+    filter: max
+    series:
+      - metric: mssql.memory_manager_total_server_memory_kb
+        scope:
+          tag: mssql
+  - title: lock wait time (ms)
+    data_type: number
+    type: number
+    color: red
+    row: 2
+    col: 6
+    size_x: 1
+    size_y: 1
+    filter: max
+    series:
+      - metric: mssql.locks_total_lock_wait_time_ms
+        scope:
+          tag: mssql
+  - title: cpu usage
+    data_type: number
+    type: detailed-chart
+    color: red
+    row: 3
+    col: 1
+    size_x: 3
+    size_y: 2
+    series:
+      - metric: base.cpu
+        scope:
+          tag: mssql
+  - title: memory grants pending
+    data_type: number
+    type: number
+    color: blue
+    row: 3
+    col: 4
+    size_x: 1
+    size_y: 1
+    filter: max
+    series:
+      - metric: mssql.memory_manager_memory_grants_pending
+        scope:
+          tag: mssql
+  - title: context switches /sec
+    data_type: number
+    type: number
+    color: blue
+    row: 3
+    col: 5
+    size_x: 1
+    size_y: 1
+    filter: max
+    series:
+      - metric: windows.context_switches_per_sec
+        scope:
+          tag: mssql
+  - title: lock timeouts /sec
+    data_type: number
+    type: number
+    color: red
+    row: 3
+    col: 6
+    size_x: 1
+    size_y: 1
+    filter: max
+    series:
+      - metric: mssql.locks_total_lock_timeouts_sec
+        scope:
+          tag: mssql
+  - title: total disk bytes /sec
+    data_type: number
+    type: stacked-chart
+    color: navy
+    row: 4
+    col: 4
+    size_x: 2
+    size_y: 3
+    series:
+      - metric: mssql.physicaldisk_total_disk_bytes_sec
+        scope:
+          tag: mssql
+  - title: latch wait time (ms)
+    data_type: number
+    type: number
+    color: red
+    row: 4
+    col: 6
+    size_x: 1
+    size_y: 1
+    filter: max
+    series:
+      - metric: mssql.latches_total_latch_wait_time_ms
+        scope:
+          tag: mssql
+  - title: mssql.databases_total_transactions_sec
+    data_type: number
+    type: detailed-chart
+    color: navy
+    row: 5
+    col: 1
+    size_x: 3
+    size_y: 2
+    series:
+      - metric: mssql.databases_total_transactions_sec
+        scope:
+          tag: mssql
+  - title: processor queue length
+    data_type: number
+    type: number
+    color: red
+    row: 5
+    col: 6
+    size_x: 1
+    size_y: 1
+    filter: max
+    series:
+      - metric: windows.processor_queue_length
+        scope:
+          tag: mssql
+  - title: memory pages /sec
+    data_type: number
+    type: number
+    color: red
+    row: 6
+    col: 6
+    size_x: 1
+    size_y: 1
+    filter: max
+    series:
+      - metric: windows.memory_pages_sec
+        scope:
+          tag: mssql
