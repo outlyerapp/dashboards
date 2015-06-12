@@ -1,0 +1,151 @@
+title: Nginx
+period: 600
+positions:
+  - title: nginx.status
+    data_type: nagios
+    type: status
+    color: orange
+    row: 1
+    col: 1
+    size_x: 1
+    size_y: 1
+    icon: true
+    legend: false
+    series:
+      - metric: nginx.status
+        scope:
+          tag: nginx
+  - title: max connections
+    data_type: number
+    type: number
+    color: olive
+    row: 1
+    col: 2
+    size_x: 1
+    size_y: 1
+    legend: false
+    icon: false
+    filter: max
+    series:
+      - metric: nginx.connections
+        scope:
+          tag: nginx
+  - title: max accepted
+    data_type: number
+    type: number
+    color: fuchsia
+    row: 1
+    col: 3
+    size_x: 1
+    size_y: 1
+    legend: false
+    icon: false
+    filter: max
+    series:
+      - metric: nginx.accepted
+        scope:
+          tag: nginx
+  - title: max handled
+    data_type: number
+    type: number
+    color: maroon
+    row: 1
+    col: 4
+    size_x: 1
+    size_y: 1
+    legend: false
+    icon: true
+    filter: max
+    series:
+      - metric: nginx.handled
+        scope:
+          tag: nginx
+  - title: max reading
+    data_type: number
+    type: number
+    color: green
+    row: 1
+    col: 5
+    size_x: 1
+    size_y: 1
+    legend: false
+    icon: true
+    filter: max
+    series:
+      - metric: nginx.reading
+        scope:
+          tag: nginx
+  - title: max requests
+    data_type: number
+    type: number
+    color: purple
+    row: 1
+    col: 6
+    size_x: 1
+    size_y: 1
+    legend: false
+    icon: false
+    filter: max
+    series:
+      - metric: nginx.requests
+        scope:
+          tag: nginx
+  - title: nginx.requests_per_second
+    data_type: number
+    type: stacked-chart
+    color: aqua
+    row: 2
+    col: 1
+    size_x: 5
+    size_y: 4
+    legend: false
+    icon: true
+    series:
+      - metric: nginx.requests_per_second
+        scope:
+          tag: nginx
+  - title: requests per second
+    data_type: number
+    type: number
+    color: aqua
+    row: 2
+    col: 6
+    size_x: 1
+    size_y: 2
+    legend: false
+    icon: false
+    filter: max
+    series:
+      - metric: nginx.requests_per_second
+        scope:
+          tag: nginx
+  - title: max waiting
+    data_type: number
+    type: number
+    color: orange
+    row: 4
+    col: 6
+    size_x: 1
+    size_y: 1
+    legend: false
+    icon: false
+    filter: max
+    series:
+      - metric: nginx.waiting
+        scope:
+          tag: nginx
+  - title: max writing
+    data_type: number
+    type: number
+    color: navy
+    row: 5
+    col: 6
+    size_x: 1
+    size_y: 1
+    legend: false
+    icon: false
+    filter: max
+    series:
+      - metric: nginx.writing
+        scope:
+          tag: nginx
