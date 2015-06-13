@@ -1,0 +1,196 @@
+title: Elastic Search
+period: 3600
+positions:
+  - title: no. of nodes
+    type: number
+    color: aqua
+    row: 1
+    col: 1
+    size_x: 1
+    size_y: 1
+    symbol: globe
+    filter: max
+    series:
+      - metric: elasticsearch.number_of_nodes
+        scope:
+          tag: elasticsearch
+  - title: active primary shards
+    type: number
+    color: blue
+    row: 1
+    col: 2
+    size_x: 1
+    size_y: 1
+    symbol: smile-o
+    series:
+      - metric: elasticsearch.active_primary_shards
+        scope:
+          tag: elasticsearch
+  - title: active shards
+    type: number
+    color: maroon
+    row: 1
+    col: 3
+    size_x: 1
+    size_y: 1
+    symbol: star-o
+    series:
+      - metric: elasticsearch.active_shards
+        scope:
+          tag: elasticsearch
+  - title: relocating shards
+    type: number
+    color: yellow
+    row: 1
+    col: 4
+    size_x: 1
+    size_y: 1
+    symbol: spinner
+    series:
+      - metric: elasticsearch.relocating_shards
+        scope:
+          tag: elasticsearch
+  - title: unassigned shards
+    type: number
+    color: purple
+    row: 1
+    col: 5
+    size_x: 1
+    size_y: 1
+    symbol: meh-o
+    series:
+      - metric: elasticsearch.unassigned_shards
+        scope:
+          tag: elasticsearch
+  - title: initialising shards
+    type: number
+    color: green
+    row: 1
+    col: 6
+    size_x: 1
+    size_y: 1
+    symbol: magic
+    series:
+      - metric: elasticsearch.initializing_shards
+        scope:
+          tag: elasticsearch
+  - type: chart
+    color: aqua
+    row: 4
+    col: 1
+    size_x: 3
+    size_y: 1
+    filter: max
+    series:
+      - metric: base.load_1_min
+        scope:
+          tag: elasticsearch
+  - title: fs bytes available
+    type: number
+    color: aqua
+    row: 4
+    col: 4
+    size_x: 1
+    size_y: 1
+    symbol: archive
+    series:
+      - metric: elasticsearch.fs.total.available_in_bytes
+        scope:
+          tag: elasticsearch
+  - title: fs total disk io ops
+    type: number
+    color: purple
+    row: 4
+    col: 5
+    size_x: 1
+    size_y: 1
+    series:
+      - metric: elasticsearch.fs.total.disk_io_op
+        scope:
+          tag: elasticsearch
+  - title: 'jvm heap mem used %'
+    type: number
+    color: green
+    row: 4
+    col: 6
+    size_x: 1
+    size_y: 1
+    symbol: lightbulb-o
+    series:
+      - metric: elasticsearch.jvm.mem.heap_used_percent
+        scope:
+          tag: elasticsearch
+  - title: 'CPU %'
+    type: chart
+    color: blue
+    row: 5
+    col: 1
+    size_x: 1
+    size_y: 2
+    symbol: tachometer
+    filter: max
+    series:
+      - metric: elasticsearch.os.cpu.usage
+        scope:
+          tag: elasticsearch
+  - title: indexing total
+    type: number
+    color: aqua
+    row: 5
+    col: 2
+    size_x: 1
+    size_y: 2
+    symbol: spinner
+    series:
+      - metric: elasticsearch.indices.indexing.index_total
+        scope:
+          tag: elasticsearch
+  - title: field data memory size
+    type: number
+    color: yellow
+    row: 5
+    col: 3
+    size_x: 1
+    size_y: 2
+    series:
+      - metric: elasticsearch.indices.fielddata.memory_size_in_bytes
+        scope:
+          tag: elasticsearch
+  - title: query total
+    type: number
+    color: navy
+    row: 5
+    col: 4
+    size_x: 1
+    size_y: 2
+    symbol: question
+    series:
+      - metric: elasticsearch.indices.search.query_total
+        scope:
+          tag: elasticsearch
+  - title: merges total size
+    type: number
+    color: maroon
+    row: 5
+    col: 5
+    size_x: 1
+    size_y: 2
+    symbol: random
+    series:
+      - metric: elasticsearch.indices.merges.total_size_in_bytes
+        scope:
+          tag: elasticsearch
+  - title: elasticsearch.indices.docs.count
+    data_type: number
+    type: number
+    color: yellow
+    row: 5
+    col: 6
+    size_x: 1
+    size_y: 2
+    symbol: file-o
+    filter: avg
+    series:
+      - metric: elasticsearch.indices.docs.count
+        scope:
+          tag: ese

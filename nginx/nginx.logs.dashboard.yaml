@@ -10,7 +10,7 @@ positions:
     size_x: 4
     size_y: 1
     series:
-      - metric: nginx-logs.5xx
+      - metric: nginx.logs.5xx
         scope:
           tag: nginx
   - title: 5xx codes / 30 secs
@@ -24,7 +24,7 @@ positions:
     filter: max
     symbol: exclamation-circle
     series:
-      - metric: nginx-logs.5xx
+      - metric: nginx.logs.5xx
         scope:
           tag: nginx
   - title: they did something wrong
@@ -36,7 +36,7 @@ positions:
     size_x: 4
     size_y: 1
     series:
-      - metric: nginx-logs.4xx
+      - metric: nginx.logs.4xx
         scope:
           tag: nginx
   - title: unhappiest requests
@@ -48,7 +48,7 @@ positions:
     size_x: 4
     size_y: 1
     series:
-      - metric: nginx-logs.max_time
+      - metric: nginx.logs.max_time
         scope:
           tag: nginx
   - title: 4xx codes / 30secs
@@ -62,7 +62,7 @@ positions:
     filter: max
     symbol: exclamation
     series:
-      - metric: nginx-logs.4xx
+      - metric: nginx.logs.4xx
         scope:
           tag: nginx
   - title: happiest requests
@@ -74,7 +74,7 @@ positions:
     size_x: 4
     size_y: 1
     series:
-      - metric: nginx-logs.min_time
+      - metric: nginx.logs.min_time
         scope:
           tag: nginx
   - title: unhappiest request
@@ -88,7 +88,7 @@ positions:
     symbol: frown-o
     filter: max
     series:
-      - metric: nginx-logs.max_time
+      - metric: nginx.logs.max_time
         scope:
           tag: nginx
   - title: good requests
@@ -100,7 +100,7 @@ positions:
     size_x: 4
     size_y: 1
     series:
-      - metric: nginx-logs.2xx
+      - metric: nginx.logs.2xx
         scope:
           tag: nginx
   - title: happiest request
@@ -114,7 +114,7 @@ positions:
     filter: min
     symbol: smile-o
     series:
-      - metric: nginx-logs.min_time
+      - metric: nginx.logs.min_time
         scope:
           tag: nginx
   - title: redirections
@@ -126,7 +126,7 @@ positions:
     size_x: 4
     size_y: 1
     series:
-      - metric: nginx-logs.3xx
+      - metric: nginx.logs.3xx
         scope:
           tag: nginx
   - title: usual request
@@ -140,6 +140,6 @@ positions:
     filter: avg
     symbol: meh-o
     series:
-      - metric: nginx-logs.avg_time
+      - metric: nginx.logs.avg_time
         scope:
           tag: nginx
