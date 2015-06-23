@@ -1,5 +1,5 @@
 title: MongoDB
-period: 86400
+period: 600
 positions:
   - type: detailed-chart
     color: blue
@@ -7,10 +7,12 @@ positions:
     col: 1
     size_x: 6
     size_y: 2
+    legend: false
+    icon: true
     series:
       - metric: mongodb.locked
         scope:
-          tag: mongo
+          tag: mongodb
   - type: number
     color: aqua
     row: 3
@@ -18,10 +20,12 @@ positions:
     size_x: 1
     size_y: 1
     symbol: random
+    legend: false
+    icon: true
     series:
       - metric: mongodb.connections
         scope:
-          tag: mongo
+          tag: mongodb
   - type: number
     color: yellow
     row: 3
@@ -29,10 +33,12 @@ positions:
     size_x: 1
     size_y: 1
     symbol: question
+    legend: false
+    icon: true
     series:
       - metric: mongodb.query
         scope:
-          tag: mongo
+          tag: mongodb
   - type: number
     color: yellow
     row: 3
@@ -40,10 +46,12 @@ positions:
     size_x: 1
     size_y: 1
     symbol: gavel
+    legend: false
+    icon: true
     series:
       - metric: mongodb.command
         scope:
-          tag: mongo
+          tag: mongodb
   - type: number
     color: yellow
     row: 3
@@ -51,10 +59,12 @@ positions:
     size_x: 1
     size_y: 1
     symbol: exchange
+    legend: false
+    icon: true
     series:
       - metric: mongodb.getmore
         scope:
-          tag: mongo
+          tag: mongodb
   - type: number
     color: yellow
     row: 3
@@ -62,10 +72,12 @@ positions:
     size_x: 1
     size_y: 1
     symbol: spinner
+    legend: false
+    icon: true
     series:
       - metric: mongodb.update
         scope:
-          tag: mongo
+          tag: mongodb
   - type: number
     color: yellow
     row: 3
@@ -73,10 +85,12 @@ positions:
     size_x: 1
     size_y: 1
     symbol: plus
+    legend: false
+    icon: true
     series:
       - metric: mongodb.insert
         scope:
-          tag: mongo
+          tag: mongodb
   - type: number
     color: green
     row: 4
@@ -84,10 +98,12 @@ positions:
     size_x: 1
     size_y: 1
     symbol: angle-double-right
+    legend: false
+    icon: true
     series:
       - metric: mongodb.araw
         scope:
-          tag: mongo
+          tag: mongodb
   - type: number
     color: green
     row: 4
@@ -95,10 +111,12 @@ positions:
     size_x: 1
     size_y: 1
     symbol: angle-double-left
+    legend: false
+    icon: true
     series:
       - metric: mongodb.qrqw
         scope:
-          tag: mongo
+          tag: mongodb
   - type: number
     color: blue
     row: 4
@@ -106,10 +124,12 @@ positions:
     size_x: 1
     size_y: 1
     symbol: arrow-circle-o-down
+    legend: false
+    icon: true
     series:
       - metric: mongodb.net_in
         scope:
-          tag: mongo
+          tag: mongodb
   - type: number
     color: blue
     row: 4
@@ -117,10 +137,12 @@ positions:
     size_x: 1
     size_y: 1
     symbol: arrow-circle-o-up
+    legend: false
+    icon: true
     series:
       - metric: mongodb.net_out
         scope:
-          tag: mongo
+          tag: mongodb
   - type: number
     color: purple
     row: 4
@@ -128,10 +150,12 @@ positions:
     size_x: 1
     size_y: 1
     symbol: archive
+    legend: false
+    icon: true
     series:
       - metric: mongodb.res
         scope:
-          tag: mongo
+          tag: mongodb
   - type: number
     color: purple
     row: 4
@@ -139,30 +163,37 @@ positions:
     size_x: 1
     size_y: 1
     symbol: bolt
+    legend: false
+    icon: true
     series:
       - metric: mongodb.vsize
         scope:
-          tag: mongo
-  - type: detailed-chart
+          tag: mongodb
+  - title: load average
+    type: detailed-chart
     color: blue
     row: 5
     col: 1
     size_x: 2
     size_y: 1
+    legend: false
+    icon: true
     series:
       - metric: base.load_1_min
         scope:
-          tag: mongo
+          tag: mongodb
   - type: detailed-chart
     color: navy
     row: 5
     col: 3
     size_x: 3
     size_y: 1
+    legend: false
+    icon: true
     series:
       - metric: base.cpu
         scope:
-          tag: mongo
+          tag: mongodb
   - type: number
     color: purple
     row: 5
@@ -170,27 +201,33 @@ positions:
     size_x: 1
     size_y: 1
     symbol: lightbulb-o
+    legend: false
+    icon: true
     series:
       - metric: base.memory
         scope:
-          tag: mongo
+          tag: mongodb
   - type: detailed-chart
     color: blue
     row: 6
     col: 1
     size_x: 3
     size_y: 1
+    legend: false
+    icon: true
     series:
       - metric: base.net_download
         scope:
-          tag: mongo
+          tag: mongodb
   - type: detailed-chart
     color: green
     row: 6
     col: 4
     size_x: 3
     size_y: 1
+    legend: false
+    icon: true
     series:
       - metric: base.net_upload
         scope:
-          tag: mongo
+          tag: mongodb
