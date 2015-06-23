@@ -1,5 +1,5 @@
 title: Elastic Search
-period: 3600
+period: 600
 positions:
   - title: no. of nodes
     type: number
