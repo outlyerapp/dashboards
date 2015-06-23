@@ -1,51 +1,64 @@
 title: RabbitMQ
-period: 86400
+period: 600
 positions:
   - title: messages
+    data_type: number
     type: number
     color: green
     row: 1
     col: 1
     size_x: 1
     size_y: 1
+    legend: false
+    icon: false
     series:
-      - metric: rabbitmq.total_messages
+      - metric: rabbitmq.queue_totals.messages
         scope:
-          tag: rabbit
+          tag: rabbitmq
   - title: connections
+    data_type: number
     type: number
     color: blue
     row: 1
     col: 2
     size_x: 1
     size_y: 1
+    legend: false
+    icon: false
     series:
-      - metric: rabbitmq.total_connections
+      - metric: rabbitmq.object_totals.connections
         scope:
-          tag: rabbit
+          tag: rabbitmq
   - title: channels
+    data_type: number
     type: number
     color: olive
     row: 1
     col: 3
     size_x: 1
     size_y: 1
+    legend: false
+    icon: false
     series:
-      - metric: rabbitmq.total_channels
+      - metric: rabbitmq.object_totals.channels
         scope:
-          tag: rabbit
+          tag: rabbitmq
   - title: exchanges
+    data_type: number
     type: number
     color: purple
     row: 1
     col: 4
     size_x: 1
     size_y: 1
+    legend: false
+    icon: false
     series:
-      - metric: rabbitmq.total_exhanges
+      - metric: rabbitmq.object_totals.exhanges
         scope:
-          tag: rabbit
+          tag: rabbitmq
   - title: queues
+    data_type: number
     type: number
     color: orange
     row: 1
@@ -53,95 +66,107 @@ positions:
     size_x: 1
     size_y: 1
     symbol: anchor
+    legend: false
+    icon: false
     series:
-      - metric: rabbitmq.total_queues
+      - metric: rabbitmq.object_totals.queues
         scope:
-          tag: rabbit
+          tag: rabbitmq
   - title: consumers
+    data_type: number
     type: number
     color: navy
     row: 1
     col: 6
     size_x: 1
     size_y: 1
+    legend: false
+    icon: false
     series:
-      - metric: rabbitmq.total_consumers
+      - metric: rabbitmq.object_totals.consumers
         scope:
-          tag: rabbit
+          tag: rabbitmq
   - title: total messages
+    data_type: number
     type: detailed-chart
     color: orange
     row: 2
     col: 1
     size_x: 5
     size_y: 2
+    legend: false
+    icon: true
     series:
-      - metric: rabbitmq.total_messages
+      - metric: rabbitmq.queue_totals.messages
         scope:
-          tag: rabbit
+          tag: rabbitmq
   - title: total rate
+    data_type: number
     type: number
     color: orange
     row: 2
     col: 6
     size_x: 1
     size_y: 2
+    legend: false
+    icon: false
     series:
-      - metric: rabbitmq.total_messages_rate
+      - metric: rabbitmq.queue_totals.rate
         scope:
-          tag: rabbit
-  - title: total messages ready
+          tag: rabbitmq
+  - title: messages ready
+    data_type: number
     type: detailed-chart
     color: orange
     row: 4
     col: 1
     size_x: 5
     size_y: 1
+    legend: false
+    icon: true
     series:
-      - metric: rabbitmq.total_messages_ready
+      - metric: rabbitmq.queue_totals.messages_ready
         scope:
-          tag: rabbit
+          tag: rabbitmq
   - title: ready rate
+    data_type: number
     type: number
     color: orange
     row: 4
     col: 6
     size_x: 1
     size_y: 1
+    legend: false
+    icon: false
     series:
-      - metric: rabbitmq.total_messages_ready_rate
+      - metric: rabbitmq.queue_totals.messages_ready_rate
         scope:
-          tag: rabbit
-  - title: metrics per second
+          tag: rabbitmq
+  - title: messages unack
+    data_type: number
     type: detailed-chart
-    color: red
+    color: green
     row: 5
     col: 1
-    size_x: 6
-    size_y: 1
-    series:
-      - metric: metrics.metrics_in_rate
-        scope:
-          tag: rabbit
-  - title: total messages unack
-    type: detailed-chart
-    color: green
-    row: 6
-    col: 1
     size_x: 5
     size_y: 1
+    legend: false
+    icon: true
     series:
-      - metric: rabbitmq.total_messages_unack
+      - metric: rabbitmq.queue_totals.unack
         scope:
-          tag: rabbit
+          tag: rabbitmq
   - title: unack rate
+    data_type: number
     type: number
     color: green
-    row: 6
+    row: 5
     col: 6
     size_x: 1
     size_y: 1
+    legend: false
+    icon: false
     series:
-      - metric: rabbitmq.total_messages_unack_rate
+      - metric: rabbitmq.queue_totals.unack_rate
         scope:
-          tag: rabbit
+          tag: rabbitmq
