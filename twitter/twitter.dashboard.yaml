@@ -1,0 +1,149 @@
+title: Twitter
+period: 600
+positions:
+  - title: followers
+    data_type: number
+    type: number
+    color: green
+    row: 1
+    col: 1
+    size_x: 1
+    size_y: 1
+    legend: false
+    icon: false
+    filter: max
+    series:
+      - metric: twitter.followers
+        scope:
+          tag: twitter
+  - title: followers
+    data_type: number
+    type: stacked-chart
+    color: teal
+    row: 1
+    col: 2
+    size_x: 3
+    size_y: 3
+    legend: false
+    icon: true
+    series:
+      - metric: twitter.followers
+        scope:
+          tag: twitter
+  - title: mentions
+    data_type: number
+    type: stacked-chart
+    color: green
+    row: 1
+    col: 5
+    size_x: 3
+    size_y: 3
+    legend: false
+    icon: true
+    series:
+      - metric: twitter.mentions
+        scope:
+          tag: twitter
+  - title: favourites
+    data_type: number
+    type: number
+    color: orange
+    row: 2
+    col: 1
+    size_x: 1
+    size_y: 1
+    legend: false
+    icon: false
+    filter: max
+    series:
+      - metric: twitter.favourites
+        scope:
+          tag: twitter
+  - title: mentions
+    data_type: number
+    type: number
+    color: purple
+    row: 3
+    col: 1
+    size_x: 1
+    size_y: 1
+    legend: false
+    icon: false
+    filter: max
+    series:
+      - metric: twitter.mentions
+        scope:
+          tag: twitter
+  - title: statuses
+    data_type: number
+    type: number
+    color: fuchsia
+    row: 4
+    col: 1
+    size_x: 1
+    size_y: 1
+    legend: false
+    icon: false
+    filter: max
+    series:
+      - metric: twitter.statuses
+        scope:
+          tag: twitter
+  - title: listed
+    data_type: number
+    type: stacked-chart
+    color: lime
+    row: 4
+    col: 2
+    size_x: 3
+    size_y: 3
+    legend: false
+    icon: true
+    series:
+      - metric: twitter.listed
+        scope:
+          tag: twitter
+  - title: friends
+    data_type: number
+    type: stacked-chart
+    color: aqua
+    row: 4
+    col: 5
+    size_x: 3
+    size_y: 3
+    legend: false
+    icon: true
+    series:
+      - metric: twitter.friends
+        scope:
+          tag: twitter
+  - title: listed
+    data_type: number
+    type: number
+    color: blue
+    row: 5
+    col: 1
+    size_x: 1
+    size_y: 1
+    legend: false
+    icon: false
+    filter: max
+    series:
+      - metric: twitter.listed
+        scope:
+          tag: twitter
+  - title: friends
+    data_type: number
+    type: number
+    color: navy
+    row: 6
+    col: 1
+    size_x: 1
+    size_y: 1
+    legend: false
+    icon: false
+    filter: max
+    series:
+      - metric: twitter.friends
+        scope:
+          tag: twitter
