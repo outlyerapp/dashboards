@@ -1,0 +1,165 @@
+title: Redis
+period: 3600
+positions:
+  - title: 'redis.used_memory, redis.used_memory_rss'
+    data_type: number
+    type: detailed-chart
+    color: navy
+    row: 1
+    col: 1
+    size_x: 4
+    size_y: 2
+    icon: true
+    legend: false
+    series:
+      - scope:
+          tag: redis
+        metric: redis.used_memory
+      - scope:
+          tag: redis
+        metric: redis.used_memory_rss
+  - title: redis.used_memory
+    data_type: number
+    type: number
+    color: navy
+    row: 1
+    col: 5
+    size_x: 2
+    size_y: 2
+    filter: avg
+    icon: false
+    legend: false
+    series:
+      - scope:
+          tag: redis
+        metric: redis.used_memory
+  - title: redis.keys
+    data_type: number
+    type: detailed-chart
+    color: navy
+    row: 3
+    col: 1
+    size_x: 4
+    size_y: 2
+    icon: true
+    legend: false
+    series:
+      - scope:
+          tag: redis
+        metric: redis.keys
+  - title: redis.keys
+    data_type: number
+    type: number
+    color: red
+    row: 3
+    col: 5
+    size_x: 2
+    size_y: 2
+    filter: max
+    icon: false
+    legend: false
+    series:
+      - scope:
+          tag: redis
+        metric: redis.keys
+  - title: 'redis.client_biggest_input_buf, redis.client_longest_output_list'
+    data_type: number
+    type: detailed-chart
+    color: navy
+    row: 5
+    col: 1
+    size_x: 4
+    size_y: 1
+    icon: true
+    legend: false
+    series:
+      - scope:
+          tag: redis
+        metric: redis.client_biggest_input_buf
+      - scope:
+          tag: redis
+        metric: redis.client_longest_output_list
+  - title: redis.status
+    data_type: nagios
+    type: status
+    color: maroon
+    row: 5
+    col: 5
+    size_x: 2
+    size_y: 2
+    icon: true
+    legend: false
+    series:
+      - scope:
+          tag: redis
+        metric: redis.status
+  - title: instanteneous ops
+    data_type: number
+    type: detailed-chart
+    color: navy
+    row: 6
+    col: 1
+    size_x: 4
+    size_y: 3
+    icon: true
+    legend: true
+    series:
+      - scope:
+          tag: redis
+        metric: redis.instantaneous_input_kbps
+      - scope:
+          tag: redis
+        metric: redis.instantaneous_ops_per_sec
+      - scope:
+          tag: redis
+        metric: redis.instantaneous_output_kbps
+  - title: connected clients
+    data_type: number
+    type: number
+    color: fuchsia
+    row: 7
+    col: 5
+    size_x: 2
+    size_y: 2
+    filter: max
+    icon: false
+    legend: false
+    series:
+      - scope:
+          tag: redis
+        metric: redis.connected_clients
+  - title: 'redis.keyspace_hits, redis.keyspace_misses'
+    data_type: number
+    type: detailed-chart
+    color: navy
+    row: 9
+    col: 1
+    size_x: 4
+    size_y: 1
+    icon: true
+    legend: false
+    series:
+      - scope:
+          tag: redis
+        metric: redis.keyspace_hits
+      - scope:
+          tag: redis
+        metric: redis.keyspace_misses
+  - title: evicted + expired keys
+    data_type: number
+    type: number
+    color: orange
+    row: 9
+    col: 5
+    size_x: 2
+    size_y: 2
+    filter: max
+    icon: false
+    legend: false
+    series:
+      - scope:
+          tag: redis
+        metric: redis.evicted_keys
+      - scope:
+          tag: redis
+        metric: redis.expired_keys
