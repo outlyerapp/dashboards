@@ -1,172 +1,201 @@
 title: RabbitMQ
-period: 600
+period: 3600
 positions:
-  - title: messages
+  - title: Message Rates
     data_type: number
-    type: number
-    color: green
-    row: 1
-    col: 1
-    size_x: 1
-    size_y: 1
-    legend: false
-    icon: false
-    series:
-      - metric: rabbitmq.queue_totals.messages
-        scope:
-          tag: rabbitmq
-  - title: connections
-    data_type: number
-    type: number
-    color: blue
-    row: 1
-    col: 2
-    size_x: 1
-    size_y: 1
-    legend: false
-    icon: false
-    series:
-      - metric: rabbitmq.object_totals.connections
-        scope:
-          tag: rabbitmq
-  - title: channels
-    data_type: number
-    type: number
-    color: olive
-    row: 1
-    col: 3
-    size_x: 1
-    size_y: 1
-    legend: false
-    icon: false
-    series:
-      - metric: rabbitmq.object_totals.channels
-        scope:
-          tag: rabbitmq
-  - title: exchanges
-    data_type: number
-    type: number
-    color: purple
-    row: 1
-    col: 4
-    size_x: 1
-    size_y: 1
-    legend: false
-    icon: false
-    series:
-      - metric: rabbitmq.object_totals.exhanges
-        scope:
-          tag: rabbitmq
-  - title: queues
-    data_type: number
-    type: number
-    color: orange
-    row: 1
-    col: 5
-    size_x: 1
-    size_y: 1
-    symbol: anchor
-    legend: false
-    icon: false
-    series:
-      - metric: rabbitmq.object_totals.queues
-        scope:
-          tag: rabbitmq
-  - title: consumers
-    data_type: number
-    type: number
+    type: detailed-chart
     color: navy
     row: 1
-    col: 6
-    size_x: 1
-    size_y: 1
+    col: 1
+    size_x: 2
+    size_y: 2
     legend: false
-    icon: false
+    icon: true
+    filter: avg
     series:
-      - metric: rabbitmq.object_totals.consumers
+      - metric: rabbitmq.overview.message_stats.deliver_get_details.rate
         scope:
           tag: rabbitmq
-  - title: total messages
+      - metric: rabbitmq.overview.message_stats.deliver_no_ack_details.rate
+        scope:
+          tag: rabbitmq
+      - metric: rabbitmq.overview.message_stats.publish_details.rate
+        scope:
+          tag: rabbitmq
+  - title: Message Totals
     data_type: number
-    type: detailed-chart
-    color: orange
-    row: 2
-    col: 1
-    size_x: 5
+    type: stacked-chart
+    color: navy
+    row: 1
+    col: 3
+    size_x: 2
     size_y: 2
     legend: false
     icon: true
     series:
-      - metric: rabbitmq.queue_totals.messages
+      - metric: rabbitmq.overview.message_stats.deliver_get
         scope:
           tag: rabbitmq
-  - title: total rate
+      - metric: rabbitmq.overview.message_stats.deliver_no_ack
+        scope:
+          tag: rabbitmq
+      - metric: rabbitmq.overview.message_stats.publish
+        scope:
+          tag: rabbitmq
+  - title: fractional load
     data_type: number
-    type: number
-    color: orange
-    row: 2
-    col: 6
-    size_x: 1
+    type: detailed-chart
+    color: olive
+    row: 1
+    col: 5
+    size_x: 2
+    size_y: 2
+    legend: true
+    icon: true
+    filter: avg
+    series:
+      - metric: base.load_fractional
+        scope:
+          tag: rabbitmq
+  - title: Queue Rates
+    data_type: number
+    type: detailed-chart
+    color: olive
+    row: 3
+    col: 1
+    size_x: 2
     size_y: 2
     legend: false
-    icon: false
+    icon: true
+    filter: avg
     series:
-      - metric: rabbitmq.queue_totals.rate
+      - metric: rabbitmq.overview.queue_totals.messages_details.rate
         scope:
           tag: rabbitmq
-  - title: messages ready
+      - metric: rabbitmq.overview.queue_totals.messages_ready_details.rate
+        scope:
+          tag: rabbitmq
+      - metric: rabbitmq.overview.queue_totals.messages_unacknowledged_details.rate
+        scope:
+          tag: rabbitmq
+  - title: Queue Totals
     data_type: number
-    type: detailed-chart
-    color: orange
-    row: 4
-    col: 1
-    size_x: 5
-    size_y: 1
+    type: stacked-chart
+    color: olive
+    row: 3
+    col: 3
+    size_x: 2
+    size_y: 2
     legend: false
     icon: true
     series:
-      - metric: rabbitmq.queue_totals.messages_ready
+      - metric: rabbitmq.overview.queue_totals.messages
         scope:
           tag: rabbitmq
-  - title: ready rate
-    data_type: number
-    type: number
-    color: orange
-    row: 4
-    col: 6
-    size_x: 1
-    size_y: 1
-    legend: false
-    icon: false
-    series:
-      - metric: rabbitmq.queue_totals.messages_ready_rate
+      - metric: rabbitmq.overview.queue_totals.messages_ready
         scope:
           tag: rabbitmq
-  - title: messages unack
+      - metric: rabbitmq.overview.queue_totals.messages_unacknowledged
+        scope:
+          tag: rabbitmq
+  - title: cpu
     data_type: number
     type: detailed-chart
-    color: green
-    row: 5
-    col: 1
-    size_x: 5
-    size_y: 1
+    color: lime
+    row: 3
+    col: 5
+    size_x: 2
+    size_y: 2
     legend: false
     icon: true
+    filter: avg
     series:
-      - metric: rabbitmq.queue_totals.unack
+      - metric: base.cpu
         scope:
           tag: rabbitmq
-  - title: unack rate
+  - title: rabbitmq.overview.object_totals.channels
     data_type: number
-    type: number
-    color: green
+    type: stacked-chart
+    color: fuchsia
     row: 5
-    col: 6
-    size_x: 1
-    size_y: 1
-    legend: false
-    icon: false
+    col: 1
+    size_x: 2
+    size_y: 2
+    legend: true
+    icon: true
     series:
-      - metric: rabbitmq.queue_totals.unack_rate
+      - metric: rabbitmq.overview.object_totals.channels
+        scope:
+          tag: rabbitmq
+  - title: rabbitmq.overview.object_totals.connections
+    data_type: number
+    type: stacked-chart
+    color: fuchsia
+    row: 5
+    col: 3
+    size_x: 2
+    size_y: 2
+    legend: true
+    icon: true
+    series:
+      - metric: rabbitmq.overview.object_totals.connections
+        scope:
+          tag: rabbitmq
+  - title: memory used
+    data_type: number
+    type: detailed-chart
+    color: red
+    row: 5
+    col: 5
+    size_x: 2
+    size_y: 2
+    legend: true
+    icon: true
+    filter: avg
+    series:
+      - metric: base.memory
+        scope:
+          tag: rabbitmq
+  - title: rabbitmq.overview.object_totals.consumers
+    data_type: number
+    type: stacked-chart
+    color: fuchsia
+    row: 7
+    col: 1
+    size_x: 2
+    size_y: 2
+    legend: true
+    icon: true
+    series:
+      - metric: rabbitmq.overview.object_totals.consumers
+        scope:
+          tag: rabbitmq
+  - title: rabbitmq.overview.object_totals.queues
+    data_type: number
+    type: stacked-chart
+    color: fuchsia
+    row: 7
+    col: 3
+    size_x: 2
+    size_y: 2
+    legend: true
+    icon: true
+    series:
+      - metric: rabbitmq.overview.object_totals.queues
+        scope:
+          tag: rabbitmq
+  - title: iowait
+    data_type: number
+    type: detailed-chart
+    color: purple
+    row: 7
+    col: 5
+    size_x: 2
+    size_y: 2
+    legend: true
+    icon: true
+    filter: avg
+    series:
+      - metric: base.cpu.iowait
         scope:
           tag: rabbitmq
