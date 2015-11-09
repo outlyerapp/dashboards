@@ -1,0 +1,308 @@
+title: Postgres
+period: 600
+positions:
+  - title: postgres.status
+    data_type: nagios
+    type: status
+    color: purple
+    row: 1
+    col: 1
+    size_x: 1
+    size_y: 2
+    legend: false
+    icon: true
+    series:
+      - metric: postgres.status
+        scope:
+          tag: postgres
+  - title: hours since analyze
+    data_type: number
+    type: number
+    color: red
+    row: 1
+    col: 2
+    size_x: 1
+    size_y: 2
+    legend: false
+    icon: false
+    filter: max
+    series:
+      - metric: postgres.pypg_hours_since_last_analyze
+        scope:
+          tag: postgres
+  - title: hours  since vacuum
+    data_type: number
+    type: number
+    color: orange
+    row: 1
+    col: 3
+    size_x: 1
+    size_y: 2
+    legend: false
+    icon: false
+    filter: max
+    series:
+      - metric: postgres.pypg_hours_since_last_vacuum
+        scope:
+          tag: postgres
+  - title: active sessions
+    data_type: number
+    type: detailed-chart
+    color: purple
+    row: 1
+    col: 4
+    size_x: 2
+    size_y: 2
+    legend: true
+    icon: true
+    filter: avg
+    series:
+      - metric: postgres.pypg_active_sessions
+        scope:
+          tag: postgres
+  - title: waiting sessions
+    data_type: number
+    type: detailed-chart
+    color: aqua
+    row: 1
+    col: 6
+    size_x: 2
+    size_y: 2
+    legend: true
+    icon: true
+    filter: avg
+    series:
+      - metric: postgres.pypg_waiting_sessions
+        scope:
+          tag: postgres
+  - title: sessions
+    data_type: number
+    type: detailed-chart
+    color: blue
+    row: 1
+    col: 8
+    size_x: 2
+    size_y: 2
+    legend: true
+    icon: true
+    filter: avg
+    series:
+      - metric: postgres.pypg_idle_sessions
+        scope:
+          tag: postgres
+  - title: deletes
+    data_type: number
+    type: detailed-chart
+    color: blue
+    row: 3
+    col: 1
+    size_x: 2
+    size_y: 2
+    legend: false
+    icon: true
+    filter: avg
+    series:
+      - metric: postgres.pypg_deletes
+        scope:
+          tag: postgres
+  - title: reads
+    data_type: number
+    type: detailed-chart
+    color: fuchsia
+    row: 3
+    col: 3
+    size_x: 2
+    size_y: 2
+    legend: false
+    icon: true
+    filter: avg
+    series:
+      - metric: postgres.pypg_reads
+        scope:
+          tag: postgres
+  - title: inserts
+    data_type: number
+    type: detailed-chart
+    color: lime
+    row: 3
+    col: 5
+    size_x: 2
+    size_y: 2
+    legend: false
+    icon: true
+    filter: avg
+    series:
+      - metric: postgres.pypg_inserts
+        scope:
+          tag: postgres
+  - title: updates
+    data_type: number
+    type: detailed-chart
+    color: fuchsia
+    row: 3
+    col: 7
+    size_x: 3
+    size_y: 2
+    legend: false
+    icon: true
+    filter: avg
+    series:
+      - metric: postgres.pypg_updates
+        scope:
+          tag: postgres
+  - title: transactions
+    data_type: number
+    type: detailed-chart
+    color: navy
+    row: 5
+    col: 1
+    size_x: 2
+    size_y: 2
+    legend: false
+    icon: true
+    filter: avg
+    series:
+      - metric: postgres.pypg_transactions
+        scope:
+          tag: postgres
+  - title: idle in transaction sessions
+    data_type: number
+    type: detailed-chart
+    color: aqua
+    row: 5
+    col: 3
+    size_x: 2
+    size_y: 2
+    legend: false
+    icon: true
+    filter: avg
+    series:
+      - metric: postgres.pypg_idle_in_transaction_sessions
+        scope:
+          tag: postgres
+  - title: locks
+    data_type: number
+    type: detailed-chart
+    color: red
+    row: 5
+    col: 5
+    size_x: 2
+    size_y: 2
+    legend: false
+    icon: true
+    filter: avg
+    series:
+      - metric: postgres.pypg_locks_accessexclusive
+        scope:
+          tag: postgres
+      - metric: postgres.pypg_locks_otherexclusive
+        scope:
+          tag: postgres
+      - metric: postgres.pypg_locks_shared
+        scope:
+          tag: postgres
+  - title: longest query
+    data_type: number
+    type: detailed-chart
+    color: aqua
+    row: 5
+    col: 7
+    size_x: 3
+    size_y: 2
+    legend: false
+    icon: true
+    filter: avg
+    series:
+      - metric: postgres.pypg_longest_query
+        scope:
+          tag: postgres
+      - metric: postgres.pypg_longest_xact
+        scope:
+          tag: postgres
+  - title: bgwriter
+    data_type: number
+    type: detailed-chart
+    color: teal
+    row: 7
+    col: 1
+    size_x: 2
+    size_y: 2
+    legend: false
+    icon: true
+    filter: avg
+    series:
+      - metric: postgres.pypg_bgwriter_checkpoint_write_time
+        scope:
+          tag: postgres
+      - metric: postgres.pypg_bgwriter_buffers_alloc
+        scope:
+          tag: postgres
+      - metric: postgres.pypg_bgwriter_buffers_backend
+        scope:
+          tag: postgres
+      - metric: postgres.pypg_bgwriter_buffers_checkpoint
+        scope:
+          tag: postgres
+      - metric: postgres.pypg_bgwriter_buffers_clean
+        scope:
+          tag: postgres
+      - metric: postgres.pypg_bgwriter_checkpoint_sync_time
+        scope:
+          tag: postgres
+      - metric: postgres.pypg_bgwriter_checkpoints_req
+        scope:
+          tag: postgres
+      - metric: postgres.pypg_bgwriter_checkpoints_timed
+        scope:
+          tag: postgres
+  - title: disk and mem read
+    data_type: number
+    type: detailed-chart
+    color: navy
+    row: 7
+    col: 3
+    size_x: 2
+    size_y: 2
+    legend: false
+    icon: true
+    filter: avg
+    series:
+      - metric: postgres.pypg_blks_diskread
+        scope:
+          tag: postgres
+      - metric: postgres.pypg_blks_memread
+        scope:
+          tag: postgres
+  - title: seqscans
+    data_type: number
+    type: detailed-chart
+    color: aqua
+    row: 7
+    col: 5
+    size_x: 2
+    size_y: 2
+    legend: false
+    icon: true
+    filter: avg
+    series:
+      - metric: postgres.pypg_tup_idxfetch
+        scope:
+          tag: postgres
+      - metric: postgres.pypg_tup_seqscan
+        scope:
+          tag: postgres
+  - title: fractional load
+    data_type: number
+    type: detailed-chart
+    color: blue
+    row: 7
+    col: 7
+    size_x: 3
+    size_y: 2
+    legend: false
+    icon: true
+    filter: avg
+    series:
+      - metric: base.load_fractional
+        scope:
+          tag: postgres
